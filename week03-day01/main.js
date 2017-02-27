@@ -88,11 +88,21 @@ var truthyThings = [1, 0, 'something', '', -1, {}]
 
 for (var i = 0; i < truthyThings.length; i++ ){
   if (truthyThings[i]) {
-    console.log(' ', truthyThings[i],  '--> truthy');
+    console.log(' ', truthyThings[i],  ' --> truthy');
   }else{
     console.log('',  truthyThings[i],  ' --> falsey');
   }
 }
+
+//################### prompt and alert ##########################
+// var yourName = prompt('What is your name?');
+//
+// if(yourName){
+//   alert ('Nice one, ' + yourName);
+// } else {
+//   alert ('Not sure what your name is!')
+// }
+//################### loop with prompt and alert ##########################
 
 var yourName = prompt('What is your name?');
 
@@ -101,3 +111,21 @@ if(yourName){
 } else {
   alert ('Not sure what your name is!')
 }
+
+console.log('--- Loops:');
+var question = 'Second time... What is your name?';
+yourName = prompt(question);
+while (!yourName){
+  alert ('Not sure your name is!');
+  yourName = prompt ('Second time... what is your name? ');
+}
+alert ('Nice one, '+ yourName);
+
+
+do {
+  prompt ('Now using a do/while loop. What is your name?');
+  if(!yourName){
+    alert ('Not sure what your name is!');
+  }
+} while(!yourName);
+alert ('Nice one, ' + yourName)
