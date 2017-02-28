@@ -104,3 +104,36 @@ if (isOldEnough(harald.age)){
 
 // TODO:
 // - scope
+
+console.log('--- OO Javacript');
+
+function Circle(radius){
+  this.radius = radius;
+  //one way to erite an instance method
+  this.Circunference = function(){
+    return 2 * Circle.PI * this.radius;
+  };
+}
+
+// static (or class) property/variable
+Circle.PI = 22/7;
+
+// anothe way to write an instance method
+// add it to the prototype
+Circle.prototype.area = function(){
+  return Circle.PI * this.radius * this.radius;
+};
+
+var coin = new Circle(1.2);
+var plate = new Circle(7);
+var circles = [coin, plate];
+
+for (i = 0; i < circles.length; i++) {
+  console.log('Radius is:', circles[i].radius);
+  console.log('Circunference is:', circles[i].Circunference());
+  console.log('Area is:', circles[i].area());
+}
+
+// console.log('Radius is:', coin.radius);
+// console.log('Circunference is:', coin.Circunference());
+// console.log('Area is:', coin.area());
