@@ -1,5 +1,7 @@
 console.log('in main.js');
 
+var capitalCityParam = 'London'; // global variable
+
 //############# This is an Array #######
 // var ages[
 //   24,
@@ -50,17 +52,48 @@ function createPerson( firstNameParam, lastNameParam, emailParam, ageParam){
     firstName: firstNameParam,
     lastName: lastNameParam,
     email: emailParam,
-    age: ageParam
+    age: ageParam,
+    capitalCity: capitalCityParam, // access global variable from within function
+    fullName: function(){
+      return firstNameParam + ' ' + lastNameParam + ' from ' + capitalCityParam +'.';
+
+    }
   };
+
   return newPerson;
 }
 
 var harald = createPerson('Harald', 'Kumar', 'h.kumar@exaple.com', 15);
-console.log('newPerson', harald);
+console.log('newPerson\'s full name:', harald.fullName());
+
+var tola = createPerson('Tola', 'Olaoke', 'tolaoke@spartaglobal.co', 21);
+var asma = createPerson('Asma', 'Chaima', 'achaima@spartaglobal.co', 23 );
+
+var people = [];
+  people.push(harald, tola, asma);
+
+// for (i = 0; i < people.length ; i++){
+// console.log( people[i].fullName() );
+//   if (isOldEnough(people[i].age)){
+//     console.log(people[i].fullName(), ' is old enough');
+//   }else{
+//     console.log(people[i].fullName(), ' is NOT old enough');
+//   };
+// }
+
+// the '?' is a short way of doing a if statment with ternary
+for (i = 0; i < people.length ; i++){
+  oldEnoughComment = (isOldEnough(people[i].age))
+  ? 'is old enough'
+  : 'is NOT old enough'
+  console.log(oldEnoughComment);
+  //  console.log(people[i].fullName(), (isOldEnough(people[i].age)) ? ' is old enough' : 'is NOT old enough');
+}
+
 
 //####################################### function with a boolean expresion
 function isOldEnough(age){
-  return (age >= 14);
+  return (age >= 16);
 }
 
 if (isOldEnough(harald.age)){
@@ -68,3 +101,6 @@ if (isOldEnough(harald.age)){
 } else {
   console.log('Come back when you are older.');
 }
+
+// TODO:
+// - scope
