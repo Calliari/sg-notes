@@ -1,0 +1,14 @@
+{
+  "name": "week03-day-04-bower",
+  "homepage": "https://github.com/Calliari/sg-notes",
+  "authors": [
+    "Calliari <jrcalliari@me.com>"
+  ],
+  "description": "seeing how bower works",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
